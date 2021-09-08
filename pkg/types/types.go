@@ -115,6 +115,8 @@ type Advisory struct {
 	VulnerableVersions []string `json:",omitempty"`
 	PatchedVersions    []string `json:",omitempty"`
 	UnaffectedVersions []string `json:",omitempty"`
+	// Custom is basically for extensibility and is not supposed to be used in OSS
+	Custom interface{} `json:",omitempty"`
 }
 
 type Vulnerability struct {
@@ -127,6 +129,8 @@ type Vulnerability struct {
 	References       []string       `json:",omitempty"`
 	PublishedDate    *time.Time     `json:",omitempty"`
 	LastModifiedDate *time.Time     `json:",omitempty"`
+	// Custom is basically for extensibility and is not supposed to be used in OSS
+	Custom interface{} `json:",omitempty"`
 }
 
 type VulnSrc interface {
